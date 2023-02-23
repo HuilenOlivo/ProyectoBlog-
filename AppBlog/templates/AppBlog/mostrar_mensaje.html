@@ -1,0 +1,43 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo_url %}
+<h2 class="mx-auto mb-5">   
+    
+
+    <h1>Mensaje de {{mensaje.usuario}}</h1>
+
+
+{% endblock %} 
+
+
+
+{% block titulo_articulox %}
+<h2><em>
+
+    <div style="text-align: center;">
+        <h5>
+
+        </h5>
+    </div>
+    <div style="text-align: center; ">
+        <p style="border: solid 1px; padding: 10px 5px ; width: 50%; display: inline-block; ">
+           
+            {{ mensaje.mensaje }}
+        </p>
+    </div>
+    <div style="text-align: center;">
+        <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'enviar_mensaje' %}"> Responder </a>
+        <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'mensajes_recibidos' %}"> Volver </a>
+    </div>
+
+
+
+
+
+</em></h2>
+{% endblock %}
+
+{% block boton_cambia %}
+{% endblock %}

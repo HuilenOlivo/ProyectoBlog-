@@ -1,0 +1,38 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo_url %}
+<h2 class="mx-auto mb-5">   
+    
+
+    <h1>{{ mensaje }}</h1>
+
+    <em>Autores!</em></h2>
+
+{% endblock %} 
+
+
+
+{% block titulo_articulox %}
+<h2><em>
+    
+    {% for autor in autores %}
+    <hr><li> 
+            {{ autor.nombre }} {{ autor.apellido }}
+            <a class="btn btn-primary" href="{% url 'eliminarautor' autor.id %}">Eliminar</a>
+            <a class="btn btn-primary" href="{% url 'editarautor' autor.id %}">Editar</a>
+
+            <hr>
+       </li>
+    {% endfor %}
+
+    
+</em></h2>
+{% endblock %}
+
+
+
+{% block boton_cambia %}
+    <a class="btn btn-dark btn-xl" href="{% url 'crear_autor' %}">Crear Nuevo Autor</a>
+{% endblock %}

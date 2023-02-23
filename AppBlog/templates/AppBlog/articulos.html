@@ -1,0 +1,45 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo_url %}
+<h2 class="mx-auto mb-5"> 
+
+    
+    <h1>{{ mensaje }}</h1>
+
+    <em>Articulos!</em></h2>
+{% endblock %} 
+
+
+
+{% block titulo_articulox %}
+
+    
+{% for articulo in articulos %}
+
+<h2><em>{{ articulo.titulo }} </h2>
+    
+    <h4> {{ articulo.subtitulo }} </em></h4> </em>
+
+
+<a class="btn btn-primary" href="{% url 'leerarticulo' articulo.id %}">Leer!</a>  
+<a class="btn btn-primary" href="{% url 'editararticulo' articulo.id %}">Editar</a>
+<a class="btn btn-primary" href="{% url 'eliminararticulo' articulo.id %}">Eliminar</a>
+
+<hr><hr>
+
+
+{% endfor %}
+{% endblock %}
+
+
+   
+{% block subtitulo_articulox %}
+<p class="lead mb-5"></p> 
+{% endblock %}
+
+
+{% block boton_cambia %}
+<a class="btn btn-dark btn-xl" href="{% url 'crear_articulo' %}">Crear Nuevo Articulo</a>
+{% endblock %}

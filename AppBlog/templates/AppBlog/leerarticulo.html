@@ -1,0 +1,45 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo_url %}
+<h2 class="mx-auto mb-5"> 
+
+    
+    <h1>{{ mensaje }}</h1>
+
+    <em> {{ post.titulo }} </em></h2>
+    
+
+    
+
+{% endblock %} 
+
+
+
+{% block titulo_articulox %}
+
+    
+    <img src="/media/{{ post.imagen }}" alt="imagen">
+
+    <h2><em> {{ post.subtitulo }} </h2>
+    
+    <h4> {{ post.cuerpo }} </em></h4> 
+
+    <h4> {{ post.autor }}</h4>
+
+    <a class="btn btn-primary btn-xl" href="{% url 'articulos' %}">Volver</a>
+
+
+
+{% endblock %}
+
+
+   
+{% block subtitulo_articulox %}
+<p class="lead mb-5"></p> 
+{% endblock %}
+
+
+{% block boton_cambia %}
+{% endblock %}

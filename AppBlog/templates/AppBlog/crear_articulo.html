@@ -1,0 +1,43 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo_url %}
+
+<h2 class="mx-auto mb-5">
+
+    <h3>{{ mensaje }}</h3>
+
+    <em>Crear Articulo!</em></h2>
+
+<h4><em>Completar formulario</em> 
+
+
+    <form action="{% url 'crear_articulo' %}" method="POST" enctype="multipart/form-data" > {% csrf_token %}
+    
+        <table> 
+      
+            {{ form.as_table }}
+
+        </table>
+        
+    
+        <input type="submit" value="Crear Atriculo" class="btn btn-primary btn-xl">
+    </form></h4>
+{% endblock %} 
+
+
+<!-- <form action="{% url 'crear_articulo' %}" method="post" >
+        <p> </p>
+        <p>Titulo del Articulo: <input type="text" name="titulo_articulo"> </p>
+        <p>Subtitulo: <input type="text" name="subtitulo_articulo"></p>
+        <p>Cuerpo:  <textarea name="cuerpo_articulo" rows="10" cols="40">Escribe aquí el articulo</textarea> </p>
+        <p>Autor: <input type="text" name="autor_id"> </p>
+        <p>Fecha de Publicacion: <input type="date" name="publicacion_articulo"></p>
+    
+    
+        <input type="submit" value="Crear Atriculo" class="btn btn-primary btn-xl">
+    </form></h4>-->
+
+
+

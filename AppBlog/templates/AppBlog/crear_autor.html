@@ -1,0 +1,28 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo_url %}
+
+<h2 class="mx-auto mb-5 text-center" >     
+
+    <h3>{{ mensaje }}</h3>
+
+    <em>Crear Autor!</em></h2>
+
+    
+<h4><em>Completar formulario</em>
+
+
+    <form action="{% url 'crear_autor' %}" method="POST"> {% csrf_token %}
+    
+        <table> 
+      
+            {{ form.as_table }}
+
+        </table>
+        
+    
+        <input type="submit" value="Crear Autor" class="btn btn-primary btn-xl">
+    </form></h4>
+{% endblock %} 

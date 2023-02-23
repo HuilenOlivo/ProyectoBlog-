@@ -1,0 +1,38 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo_url %}
+<h2 class="mx-auto mb-5"> 
+
+
+    <em>Mensajes!</em></h2>
+    {{ mensaje }}
+
+    
+<div style="text-align: center; padding-top: 1%; padding-bottom: 1%;">
+    <a class="btn btn-primary btn-xm " href="{% url 'enviar_mensaje' %}"> Crear nuevo mensaje </a>
+    <a class="btn btn-primary btn-xm " href="{% url 'mensajes_recibidos' %}"> Casilla de Mensajes </a>
+</div>
+
+{% endblock %} 
+
+
+
+{% block titulo_articulox %}
+
+   
+   
+
+{% endblock %}
+
+
+   
+{% block subtitulo_articulox %}
+<p class="lead mb-5"></p> 
+{% endblock %}
+
+
+{% block boton_cambia %}
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo_url %}
+
+<h2 class="mx-auto mb-5">     
+
+    <h3>{{ mensaje }}</h3>
+
+    <em>Ingrear usuario!</em></h2>
+
+
+    <form action="{% url 'ingresar' %}" method="POST"> {% csrf_token %}
+    
+        <table> 
+      
+            {{ form.as_table }}
+
+        </table>
+        
+    
+        <input type="submit" value="Ingresar" class="btn btn-primary btn-xl">
+
+
+
+    <ul>
+
+        <h3><em>Si aun no tienes usuario, Vamos a Crearlo!</em></h3>
+
+    </ul> 
+
+    <ul>
+        <a class="btn btn-primary btn-xl" href="{% url 'registro' %}">Crear Usuario!</a>
+        
+    </ul>    
+
+    </form></h4>
+
+{% endblock %} 
+
+
+

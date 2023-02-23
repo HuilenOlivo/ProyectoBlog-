@@ -1,0 +1,31 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo_url %}
+
+    <h2 class="mx-auto mb-5">     
+
+        <h3>{{ mensaje }}</h3>
+
+        <em>Modificar Autor: {{ autor.nombre }}</em></h2>
+
+        
+    <h4><em>Completar formulario</em>
+
+
+    <form action="{% url 'editarautor' autor.id %}" method="POST"> {% csrf_token %}
+    
+        <table> 
+    
+            {{ form.as_table }}
+
+        </table>
+        
+    
+        <input type="submit" value="Modificar Autor" class="btn btn-primary btn-xl">
+        
+    </form></h4>
+    
+    <a class="btn btn-primary btn-xl" href="{% url 'autores' %}">Volver</a>
+{% endblock %} 

@@ -1,0 +1,41 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo_url %}
+<h2 class="mx-auto mb-5"> 
+
+    <em>    Lista de mensajes - {{ user.username }}</em></h2>
+    {{ mensaje }}
+{% endblock %} 
+
+
+
+{% block titulo_articulox %}
+
+Buzon de Mensaje <br>
+
+
+
+{% for mensaje in mensajes %}
+
+    <li style="text-align: center; clear: both; list-style: none;"> 
+        Mensaje de {{mensaje.usuario}} - {{ mensaje.fecha }}
+        {% if mensaje.leido == False %}
+        <i class="fa-solid fa-envelope"></i>
+        {% else %}
+        <i class="fa-solid fa-envelope-open"></i>
+        {% endif %}
+        <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'mostrar_mensaje' mensaje.id %}"> Leer</a>
+        <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'eliminar_mensaje' mensaje.id %}"> Eliminar  </a> 
+    </li>
+{% endfor %}
+
+
+<div style="text-align: center;">
+<a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'mensajes' %}"> Volver </a>
+</div>
+{% endblock %}
+
+{% block boton_cambia %}
+{% endblock %}

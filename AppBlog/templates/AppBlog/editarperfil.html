@@ -1,0 +1,26 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo_url %}
+
+<h2 class="mx-auto mb-5">     
+
+    <img src="{{ avatar }}" alt="">
+    <em>Editando Usuario: {{ nombreusuario }}</em></h2> 
+
+    <h3>{{ mensaje }}</h3>
+
+
+    <form action="{% url 'editarperfil' %}" method="POST"> {% csrf_token %}<h5>
+    
+        <table> 
+      
+            {{ form.as_table }}
+
+        </table>
+        
+    
+        <input type="submit" value="Modificar Usuario" class="btn btn-primary btn-xl"></h5>
+    </form></h4>
+{% endblock %} 

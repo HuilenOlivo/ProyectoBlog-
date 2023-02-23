@@ -1,0 +1,19 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo_url %}
+
+<h2 class="mx-auto mb-5">     
+
+    <h3>{{ mensaje }}</h3>
+
+    <em>Buscar Articulo!</em></h2>
+
+    <form action="{% url 'buscar' %}" method="GET"> 
+    
+        <input type="text" name="titulo" id="titulo" placeholder="Inserte titulo">
+    
+        <input type="submit" value="Buscar Autor" class="btn btn-primary btn-xl">
+    </form></h4>
+{% endblock %} 
