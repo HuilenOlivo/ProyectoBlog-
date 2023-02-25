@@ -23,7 +23,7 @@ class ArticuloForm (forms.Form):
 
 class RegistroUsuarioForm(UserCreationForm):
 
-    email= forms.EmailField(label="Email Profesor")
+    email= forms.EmailField(label="Email")
     password1= forms.CharField(label="Contraseña", widget=forms.PasswordInput)
     password2= forms.CharField(label="Confirmar Contraseña", widget=forms.PasswordInput)
     
