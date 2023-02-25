@@ -171,6 +171,7 @@ def editararticulo (request,id):
             articulo.titulo= informacion['titulo']
             articulo.subtitulo= informacion ['subtitulo']
             articulo.cuerpo= informacion ['cuerpo']
+            articulo.autor=informacion['autor']
             articulo.imagen= informacion ['imagen']
             articulo.save()
             articulos= Articulo.objects.all()
